@@ -1,61 +1,71 @@
+
+
+
+
 import React, { useState } from 'react';
 
-const ImageUploader = () => {
+const WasteClassificationForm = () => {
   const [image, setImage] = useState(null);
+  const [familySize, setFamilySize] = useState('');
+  const [prediction, setPrediction] = useState(null);
 
-  const handleDrop = (e) => {
-    e.preventDefault();
-    const file = e.dataTransfer.files[0];
-    if (file && file.type.startsWith('image/')) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImage(reader.result);
-        // Call function to send image data to API
-        sendImageToAPI(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
   };
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
+  const handleFamilySizeChange = (e) => {
+    setFamilySize(e.target.value);
   };
 
-  const sendImageToAPI = async (imageData) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('image', image);
+    formData.append('family_size', familySize);
+
     try {
-      const response = await fetch('https://api.example.com/upload', {
+      const response = await fetch('http://127.0.0.1:5000/classify', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ image: imageData, date: new Date() }),
+        body: formData,
       });
 
       if (!response.ok) {
-        throw new Error('Failed to upload image');
+        throw new Error('Failed to classify waste');
       }
 
-      console.log('Image uploaded successfully');
-      // Handle success response if needed
+      const data = await response.json();
+      setPrediction(data);
     } catch (error) {
-      console.error('Error uploading image:', error.message);
+      console.error('Error:', error.message);
       // Handle error if needed
     }
   };
 
   return (
-    <div
-      style={{ width: '300px', height: '300px', border: '1px solid black' }}
-      onDrop={handleDrop}
-      onDragOver={handleDragOver}
-    >
-      {image ? (
-        <img src={image} alt="Uploaded" style={{ maxWidth: '100%', maxHeight: '100%' }} />
-      ) : (
-        <p>Drop an image here</p>
-      )}
+    <div>
+      <h1>Waste Classification</h1>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <input type="file" name="image" accept="image/*" onChange={handleImageChange} />
+        <input
+          type="text"
+          name="family_size"
+          placeholder="Family Size"
+          value={familySize}
+          onChange={handleFamilySizeChange}
+        />
+        <button type="submit">Classify</button>
+      </form>
+      <div id="result">
+        {prediction && (
+          <div>
+            <p>Predicted Category: {prediction.predicted_category}</p>
+            <p>Points Earned: {prediction.points}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-export default ImageUploader;
+export default WasteClassificationForm;
+

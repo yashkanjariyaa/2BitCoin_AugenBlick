@@ -5,16 +5,17 @@ import LineChart from "./plot";
 import Leaderboard from "./leaderBoard";
 import DataViewer from "./dataViewerCard";
 import FamilyPointsCalculator from "./familyPoints";
+import WasteClassificationForm from "./imageUpload";
 const Home = () => {
     return(
         <div>
             <div>
-                <ImageUploader/>
+                <WasteClassificationForm/>
                 <ListComponent/>
                 <LineChart/>
                 <DataViewer/>
                 <Leaderboard/>
-                <FamilyPointsCalculator/>
+                
             </div>
         </div>
     )

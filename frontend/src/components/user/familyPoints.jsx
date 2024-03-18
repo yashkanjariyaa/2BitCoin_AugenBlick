@@ -14,14 +14,14 @@ function FamilyPointsCalculator() {
     setError(null);
 
     // API endpoint to send the family size
-    const apiUrl = 'your_api_endpoint_here';
+    const apiUrl = 'http://127.0.0.1:5000/classify';
 
     fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ familySize: parseInt(familySize) }),
+      body: JSON.stringify({ familySize: familySize.toString() }),
     })
       .then((response) => {
         if (!response.ok) {
