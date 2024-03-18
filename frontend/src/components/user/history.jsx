@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const ListComponent = () => {
   const [data, setData] = useState([]);
+  const username = localStorage.getItem('username');
 
   useEffect(() => {
     fetchData();
@@ -9,7 +10,7 @@ const ListComponent = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://api.example.com/data');
+      const response = await fetch(`https://localhost:3000/userData?username=${username}`);
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
