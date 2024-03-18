@@ -7,18 +7,17 @@ import DataViewer from "./dataViewerCard";
 import FamilyPointsCalculator from "./familyPoints";
 import WasteClassificationForm from "./imageUpload";
 const Home = () => {
-    return(
-        <div>
-            <div>
-                <WasteClassificationForm/>
-                <ListComponent/>
-                <LineChart/>
-                <DataViewer/>
-                <Leaderboard/>
-                
-            </div>
-        </div>
-    )
-}
+  return (
+    <div>
+      <div>
+        <WasteClassificationForm />
+        <ListComponent />
+        <LineChart />
+        <DataViewer />
+        <Leaderboard />
+      </div>
+    </div>
+  );
+};
 
 export default Home;

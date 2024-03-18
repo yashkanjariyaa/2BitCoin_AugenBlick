@@ -1,63 +1,67 @@
-body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  h2 {
-    margin-top: 0;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .input-group button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .input-group button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .error {
-    color: #dc3545;
-    margin-bottom: 15px;
-  }
-  
-  .switch-button {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .switch-button:hover {
-    background-color: #0056b3;
-  }
-  
+/* App container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Login and Signup form */
+.form-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Form heading */
+.form-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.input-field {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Error message */
+.error-message {
+  color: #f00;
+  margin-bottom: 15px;
+}
+
+/* Button */
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Switch buttons */
+.switch-button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.switch-button:hover {
+  text-decoration: underline;
+}
+
+/* Login/Signup text */
+.login-signup-text {
+  margin-top: 15px;
+}
