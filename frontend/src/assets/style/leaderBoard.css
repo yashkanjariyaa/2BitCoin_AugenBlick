@@ -21,7 +21,9 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+  th{
+    color: black;
+  }
   .timeframe-buttons button:hover {
     background-color: #0056b3;
   }

@@ -44,35 +44,39 @@ const Login = ({ onSwitchToSignup }) => {
     console.log(type);
   };
   return (
-    <div>
-      <h2>{userType === "admin" ? "Admin Login" : "User Login"}</h2>
-      {error && <div>{error}</div>}
+    <div className="auth-container">
+      <h2 className="auth-title">{userType === "admin" ? "Admin Login" : "User Login"}</h2>
+      {error && <div className="auth-error">{error}</div>}
       <input
+        className="auth-input"
         type="text"
         placeholder="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
+        className="auth-input"
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Login</button>
+      <button className="auth-button" onClick={handleLogin}>Login</button>
       <p>
         Don't have an account?{" "}
-        <button onClick={onSwitchToSignup}>Signup</button>
+        <button className="auth-switch-button" onClick={onSwitchToSignup}>Signup</button>
       </p>
       <p>
         Login as:
         <button
+          className={`auth-type-button ${userType === "user" ? "active" : ""}`}
           onClick={() => handleUserTypeChange("user")}
           disabled={userType === "user"}
         >
           User
         </button>
         <button
+          className={`auth-type-button ${userType === "admin" ? "active" : ""}`}
           onClick={() => handleUserTypeChange("admin")}
           disabled={userType === "admin"}
         >
@@ -81,7 +85,7 @@ const Login = ({ onSwitchToSignup }) => {
       </p>
     </div>
   );
-};
+}
 
 const Signup = ({ onSwitchToLogin }) => {
   const [username, setUsername] = useState("");
@@ -116,41 +120,45 @@ const Signup = ({ onSwitchToLogin }) => {
   };
 
   return (
-    <div>
-      <h2>{userType === "admin" ? "Admin Signup" : "User Signup"}</h2>
-      {error && <div>{error}</div>}
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleSignup}>Signup</button>
-      <p>
-        Already have an account?{" "}
-        <button onClick={onSwitchToLogin}>Login</button>
-      </p>
-      <p>Signup as:</p>
-      <button
-        onClick={() => handleUserTypeChange("user")}
-        disabled={userType === "user"}
-      >
-        User
-      </button>
-      <button
-        onClick={() => handleUserTypeChange("admin")}
-        disabled={userType === "admin"}
-      >
-        Admin
-      </button>
-    </div>
-  );
+      <div className="auth-container">
+        <h2 className="auth-title">{userType === "admin" ? "Admin Signup" : "User Signup"}</h2>
+        {error && <div className="auth-error">{error}</div>}
+        <input
+          className="auth-input"
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          className="auth-input"
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button className="auth-button" onClick={handleSignup}>Signup</button>
+        <p>
+          Already have an account?{" "}
+          <button className="auth-switch-button" onClick={onSwitchToLogin}>Login</button>
+        </p>
+        <p>Signup as:</p>
+        <button
+          className={`auth-type-button ${userType === "user" ? "active" : ""}`}
+          onClick={() => handleUserTypeChange("user")}
+          disabled={userType === "user"}
+        >
+          User
+        </button>
+        <button
+          className={`auth-type-button ${userType === "admin" ? "active" : ""}`}
+          onClick={() => handleUserTypeChange("admin")}
+          disabled={userType === "admin"}
+        >
+          Admin
+        </button>
+      </div>
+    );
 };
 
 export default function Auth() {

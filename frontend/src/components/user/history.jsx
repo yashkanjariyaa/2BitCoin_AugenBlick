@@ -13,12 +13,12 @@ const ListComponent = () => {
     try {
       // Dummy data as an array of objects
       const dummyData = [
-        { image: './constants/data2/image1.jpeg', date: '2024-03-18', name: 'Item 1' },
-        { image: './constants/data2/image2.jpeg', date: '2024-03-19', name: 'Item 2' },
-        { image: './constants/data2/image3.jpeg', date: '2024-03-20', name: 'Item 3' },
-        { image: './constants/data2/image4.jpeg', date: '2024-03-20', name: 'Item 4' },
-        { image: './constants/data2/image5.jpeg', date: '2024-03-20', name: 'Item 5' },
-        { image: './constants/data2/image6.jpeg', date: '2024-03-20', name: 'Item 6' },
+        { image: './image1.jpeg', date: '2024-03-18', name: 'Item 1' },
+        { image: './image2.jpeg', date: '2024-03-19', name: 'Item 2' },
+        { image: './image3.jpeg', date: '2024-03-20', name: 'Item 3' },
+        { image: './image4.jpeg', date: '2024-03-20', name: 'Item 4' },
+        { image: './image5.jpeg', date: '2024-03-20', name: 'Item 5' },
+        { image: './image6.jpeg', date: '2024-03-20', name: 'Item 6' },
       ];
       
 
