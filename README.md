@@ -9,6 +9,7 @@ EcoScore is a web application that allows users to upload images of waste, which
 - **Machine Learning Model**: ResNet
 - **Model Integration**: Flask
 - **Dataset**: TrashNet (available on GitHub)
+- **Model Trained with **: 0.8675889372825623
 
 ### Work Distribution:
 
