@@ -18,6 +18,7 @@
     margin-bottom: 10px;
     width: 100%;
     padding: 8px;
+    background-color: #76ABAE;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
@@ -27,7 +28,7 @@
     width: 100%;
     padding: 10px;
     background-color: #007bff;
-    color: #fff;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -38,7 +39,7 @@
   }
   
   .prediction-info {
-    background-color: #f9f9f9;
+    background-color: #76ABAE;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
