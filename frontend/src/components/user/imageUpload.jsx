@@ -70,29 +70,24 @@ const WasteClassificationForm = () => {
   };
 
   return (
-    <div>
-      <h1>Waste Classification</h1>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
-        <input type="file" name="image" accept="image/*" onChange={handleImageChange} />
-        <input
-          type="text"
-          name="family_size"
-          placeholder="Family Size"
-          value={familySize}
-          onChange={handleFamilySizeChange}
-        />
-        <button type="submit">Classify</button>
-      </form>
-      <div id="result">
-        {prediction && (
-          <div>
-            <p>Predicted Category: {prediction.predicted_category}</p>
-            <p>Points Earned: {prediction.points}</p>
-            <button onClick={handleSave}>Save</button>
-          </div>
-        )}
+    <div class="waste-classification">
+  <h1>Waste Classification</h1>
+  <form class="classification-form" onSubmit={handleSubmit} encType="multipart/form-data">
+    <input class="file-input" type="file" name="image" accept="image/*" onChange={handleImageChange} />
+    <input class="family-size-input" type="text" name="family_size" placeholder="Family Size" value={familySize} onChange={handleFamilySizeChange} />
+    <button class="classify-button" type="submit">Classify</button>
+  </form>
+  <div id="result" class="classification-result">
+    {prediction && (
+      <div class="prediction-info">
+        <p>Predicted Category: {prediction.predicted_category}</p>
+        <p>Points Earned: {prediction.points}</p>
+        <button class="save-button" onClick={handleSave}>Save</button>
       </div>
-    </div>
+    )}
+  </div>
+</div>
+
   );
 };
 
