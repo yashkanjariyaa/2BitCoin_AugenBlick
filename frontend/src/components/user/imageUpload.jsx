@@ -28,7 +28,7 @@ const ImageUploader = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ image: imageData }),
+        body: JSON.stringify({ image: imageData, date: new Date() }),
       });
 
       if (!response.ok) {
