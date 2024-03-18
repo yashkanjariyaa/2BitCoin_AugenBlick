@@ -1,1 +1,1 @@
-# Syn3rgy
+# Eco Score
