@@ -4,6 +4,7 @@ import ListComponent from "./history";
 import LineChart from "./plot";
 import Leaderboard from "./leaderBoard";
 import DataViewer from "./dataViewerCard";
+import FamilyPointsCalculator from "./familyPOints";
 const Home = () => {
     return(
         <div>
@@ -13,6 +14,7 @@ const Home = () => {
                 <LineChart/>
                 <DataViewer/>
                 <Leaderboard/>
+                <FamilyPointsCalculator/>
             </div>
         </div>
     )

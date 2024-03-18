@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import "../assets/style/auth.css";
 const API_URL = 'http://your-backend-url.com';
 
 const Login = ({ onSwitchToSignup }) => {
@@ -112,7 +112,7 @@ const Signup = ({ onSwitchToLogin }) => {
   );
 };
 
-export default function App() {
+export default function Auth() {
   const [showLogin, setShowLogin] = useState(true);
 
   const switchToSignup = () => {
